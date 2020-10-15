@@ -24,6 +24,12 @@ class BulletsController extends Controller
      */
     public function create(Request $request)
     {
+        $request->validate([
+            'name'=> 'required|max:255',
+            'size'=> 'required|max:255',
+            'type'=> 'required|max:25',
+            'price'=> 'required|max:255',
+        
         $post = new Post();
         $post->name = $request->$name;
         $post->size = $request->$size;
